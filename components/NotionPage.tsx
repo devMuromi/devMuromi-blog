@@ -159,6 +159,12 @@ const propertySelectValue = (
         <a>{defaultFn()}</a>
       </Link>
     )
+  } else if (pageHeader && schema.type === 'select' && value) {
+    return (
+      <Link href={`/category/${value}`} key={key}>
+        <a>{defaultFn()}</a>
+      </Link>
+    )
   }
 
   return defaultFn()
