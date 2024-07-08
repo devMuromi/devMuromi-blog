@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 
 import * as Fathom from 'fathom-client'
+import { GoogleAnalytics } from '@next/third-parties/google'
 // used for rendering equations (optional)
 import 'katex/dist/katex.min.css'
 import posthog from 'posthog-js'
@@ -18,6 +19,8 @@ import 'styles/global.css'
 import 'styles/notion.css'
 // global style overrides for prism theme (optional)
 import 'styles/prism-theme.css'
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 
 import { bootstrap } from '@/lib/bootstrap-client'
 import {
@@ -61,5 +64,10 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Component {...pageProps} />
+      <GoogleAnalytics gaId='G-3CXQHTQY6N' />
+    </>
+  )
 }
