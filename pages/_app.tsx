@@ -19,8 +19,6 @@ import 'styles/global.css'
 import 'styles/notion.css'
 // global style overrides for prism theme (optional)
 import 'styles/prism-theme.css'
-import { GoogleAnalytics } from '@next/third-parties/google'
-
 
 import { bootstrap } from '@/lib/bootstrap-client'
 import {
